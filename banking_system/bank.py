@@ -8,8 +8,8 @@ class Bank:
 
     # todo: Add the following method(s):
     #       create_account
-    
-    def create_account(self, account_type, account_number, account_holder_name, balance, interest_rate, overdraft_limit):
+
+    def create_account(self, account_type, account_number, account_holder_name, balance, interest_rate = 0.0, overdraft_limit = 0):
         """Creates an account with the given account type (SavingsAccount or CheckingAccount).
 
         Args:

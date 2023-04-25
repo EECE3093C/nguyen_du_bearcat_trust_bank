@@ -8,6 +8,7 @@ class Bank:
 
     # todo: Add the following method(s):
     #       create_account
+    
     def create_account(self, account_type, account_number, account_holder_name, balance, interest_rate, overdraft_limit):
         """Creates an account with the given account type (SavingsAccount or CheckingAccount).
 
@@ -19,18 +20,15 @@ class Bank:
             interest_rate (float, optional): The interest rate. Defaults to 0.0.
             overdraft_limit (float, optional): The overdraft limit. Defaults to 0.
         """
-        match account_type:
-            case "SavingsAccount":
-                account = SavingsAccount(account_number, account_holder_name, balance, interest_rate)
-            
-            case "CheckingAccount":
-                account = CheckingAccount(account_number, account_holder_name, balance, overdraft_limit)
-            
-            case _:
-                print("Invalid account type")
-                           
+        if account_type == "SavingsAccount":
+            account = SavingsAccount(account_number, account_holder_name, balance, interest_rate)
+        elif account_type == "CheckingAccount":
+            account = CheckingAccount(account_number, account_holder_name, balance, overdraft_limit)
+        else: 
+            print("Invalid account type")
+            return
         self.accounts.append(account)
-
+                           
     def delete_account(self, account_number):
         """Deletes an account with the given account number.
 

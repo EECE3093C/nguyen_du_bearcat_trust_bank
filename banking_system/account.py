@@ -56,6 +56,10 @@ class CheckingAccount(Account):
     # todo: Add the following methods:
     #       __init__
 
+    def __init__(self, account_number, account_holder_name, balance, overdraft_limit = 0):
+        super().__init__(account_number, account_holder_name, balance)
+        self.overdraft_limit = overdraft_limit
+        
     def withdraw(self, amount):
         """Withdraw the given amount from the account if it doesn't exceed the overdraft limit."""
         if amount <= self.balance + self.overdraft_limit:

@@ -2,6 +2,7 @@
 
 Relationship between `Bank`, `Account`, `SavingsAccount`, `CheckingAccount`
 
+```mermaid
 classDiagram
 
     Account <|-- SavingsAccount
@@ -34,4 +35,5 @@ classDiagram
         +withdraw(amount) float
         +display() void
     }
-    
+
+```
